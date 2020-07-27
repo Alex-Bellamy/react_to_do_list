@@ -1,8 +1,8 @@
 describe('To do list', () => {
-it('Allows users to see a to do list', () => {
-    cy.visit('/');
-    cy.get('input#typetodo').type('Wash the Car');
-    cy.get('button#Add').click();
-    cy.get('p#message').should('contain', 'Wash the Car')
-    })
+it('Allows users to add task to do list', () => {
+  cy.visit('/');
+  cy.get('input').type('Wash the car');
+  cy.contains('Add Task').click();
+  cy.contains('Wash the car').should('be.visible')
+  })
 })
