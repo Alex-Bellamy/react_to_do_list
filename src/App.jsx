@@ -39,7 +39,7 @@ function App() {
     <input ref={taskNameRef} type="text" />
     <button onClick={handleAddTask}>Add Task</button>
     <button>Clear Completed Tasks</button>
-    <div>0 left to do</div>
+    <div>{todos.filter(todo => !todo.complete).length} task(s) outstanding</div>
     </>
   )
 }
