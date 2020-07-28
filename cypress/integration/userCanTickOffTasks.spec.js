@@ -1,4 +1,4 @@
-describe('It allows users to update mark off completed tasks', () => {
+describe('It allows users to mark off completed tasks', () => {
   it('Allows ticking off task when complete', () => {
     cy.visit('/');
     cy.get('input').type('Washing tonight');

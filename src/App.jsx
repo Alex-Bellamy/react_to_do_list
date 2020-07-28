@@ -33,12 +33,17 @@ function App() {
     taskNameRef.current.value = null
   }
 
+  function handleClearComplete() {
+    const newTasks = todos.filter(todo => !todo.complete)
+    setTodos(newTasks)
+  }
+
   return (
     <>
     <TodoList todos={todos} toggleTasks={toggleTasks} />
     <input ref={taskNameRef} type="text" />
     <button onClick={handleAddTask}>Add Task</button>
-    <button>Clear Completed Tasks</button>
+    <button onClick={handleClearComplete}>Clear Completed Tasks</button>
     <div>{todos.filter(todo => !todo.complete).length} task(s) outstanding</div>
     </>
   )
